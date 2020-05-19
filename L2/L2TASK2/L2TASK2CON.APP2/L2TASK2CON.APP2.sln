@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2TASK2CON.APP2", "L2TASK2CON.APP2\L2TASK2CON.APP2.csproj", "{50B371CA-6996-4257-8FC8-1BA894A16CEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50B371CA-6996-4257-8FC8-1BA894A16CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B371CA-6996-4257-8FC8-1BA894A16CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B371CA-6996-4257-8FC8-1BA894A16CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B371CA-6996-4257-8FC8-1BA894A16CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2E77091-B095-445B-BA49-BB852A0F5D4E}
+	EndGlobalSection
+EndGlobal
