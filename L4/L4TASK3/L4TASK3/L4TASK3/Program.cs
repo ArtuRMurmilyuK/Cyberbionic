@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+
 
 
 namespace L4TASK3
@@ -8,70 +8,62 @@ namespace L4TASK3
     {
         static void Main()
         {
-            Console.WriteLine("Select word for translate :Дождь, Снег, Солнце, Облачно, Град, Шторм, Потоп, Безоблачный, Ветер, Гололёд");
-            string words= Console.ReadLine();
+            Console.WriteLine("Select word for translate: Дождь, Снег, Солнце, Облачно, Град, Шторм, Потоп, Безоблачный, Ветер, Гололёд");
+            var words = Console.ReadLine();
+            string result = null;
             switch (words)
             {
                 case "Дождь":
                 {
-                    Console.WriteLine("Rain");
-                    Console.ReadKey();
+                    result = "Rain";
                     break;
                 }
                 case "Снег":
                 {
-                    Console.WriteLine("Snow");
-                    Console.ReadKey();
+                    result = "Snow";
                     break;
                 }
                 case "Солнце":
                 {
-                    Console.WriteLine("The sun");
-                    Console.ReadKey();
+                    result = "The sun";
                     break;
                 }
                 case "Облачно":
                 {
-                    Console.WriteLine("Cloudy");
-                    Console.ReadKey();
+                    result = "Cloudy";
                     break;
                 }
                 case "Град":
                 {
-                    Console.WriteLine("Hail");
-                    Console.ReadKey();
+                    result = "Hail";
                     break;
                 }
                 case "Шторм":
                 {
-                    Console.WriteLine("Storm");
-                    Console.ReadKey();
+                    result = "Storm";
                     break;
                 }
                 case "Потоп":
                 {
-                    Console.WriteLine("Deluge");
-                    Console.ReadKey();
+                    result = "Deluge";
                     break;
                 }
                 case "Безоблачный":
                 {
-                    Console.WriteLine("Cloudless");
-                    Console.ReadKey();
+                    result = "Cloudless";
                     break;
                 }
                 case "Ветер":
                 {
-                    Console.WriteLine("Wind");
-                    Console.ReadKey();
+                    result = "Wind";
                     break;
                 }
                 case "Гололёд":
                 {
-                    Console.WriteLine("Ice");
-                    Console.ReadKey();
+                    result = "Ice";
                     break;
                 }
+                    
                 default:
                 {
                     Console.WriteLine("This word is not in the dictionary.");
@@ -80,6 +72,8 @@ namespace L4TASK3
                 }
 
             }
+            Console.Write(result);
+            Console.ReadKey();
         }
     }
 }
