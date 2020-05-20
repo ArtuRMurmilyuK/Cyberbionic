@@ -13,7 +13,7 @@ namespace L4TASK2
             bool result = float.TryParse(input, out number);
             if (result == true )
             {
-                if (number>=0 && number <=100)
+                if (number >=0 && number <=100)
                 {
                     if (number >= 0 && number <= 14)
                     {
