@@ -1,20 +1,20 @@
 TASK 1
 
--Using Visual Studio, create a project using the Console Application template. 
--Write a program - console calculator. 
--Create two variables named operand1 and operand2. 
--Set the variables to some arbitrary values. 
--Invite the user to enter the sign of the arithmetic operation. 
--Accept the value entered by the user and put it in the string variable sign. 
--To organize the selection of the computational process algorithm, use the switch switch. 
--Display the result of the arithmetic operation. In the case of using the division operation, 
--organize a check of the division attempt by zero. 
--And if there is one, then cancel the arithmetic operation and notify the user of the error.
++Using Visual Studio, create a project using the Console Application template. 
++Write a program - console calculator. 
++Create two variables named operand1 and operand2. 
++Set the variables to some arbitrary values. 
++Invite the user to enter the sign of the arithmetic operation. 
++Accept the value entered by the user and put it in the string variable sign. 
++To organize the selection of the computational process algorithm, use the switch switch. 
++Display the result of the arithmetic operation. In the case of using the division operation, 
++organize a check of the division attempt by zero. 
++And if there is one, then cancel the arithmetic operation and notify the user of the error.
 
 plan
--create a project using the Console Application template. 
--Create two variables named operand1 and operand2. 
--Make user input
--input arithmetic action
--conclusion
--Check division by 0. error message
++create a project using the Console Application template. 
++Create two variables named operand1 and operand2. 
++Make user input
++input arithmetic action
++conclusion
++Check division by 0. error message
