@@ -17,13 +17,12 @@ namespace L4TASK1
             operand2 = Convert.ToDouble(Console.ReadLine());
             */
             double operand1, operand2;
-            Console.WriteLine("Введите число 1:");
+            Console.WriteLine("Enter number 1:");
             string input = Console.ReadLine();
             bool result = double.TryParse(input, out operand1);
             if (result == true)
             {
-                Console.WriteLine("Преобразование прошло успешно");
-                Console.WriteLine("Введите число 2:");
+                Console.WriteLine("Enter number 2:");
                 string input2 = Console.ReadLine();
                 bool result2 = double.TryParse(input, out operand2);
 
@@ -89,9 +88,12 @@ namespace L4TASK1
                     }
                 }
                 else
-                    Console.WriteLine("Преобразование завершилось неудачно");
-                Console.ReadKey();
+                    Console.WriteLine("No number entered);
+                    Console.ReadKey();
             }
+            else
+                Console.WriteLine("No number entered");
+            Console.ReadKey();
         }
     }
 }
