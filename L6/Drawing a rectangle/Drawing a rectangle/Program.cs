@@ -6,18 +6,18 @@ namespace Drawing_a_rectangle
     {
         static void Main()
         {
-            bool check = false;
-
             int height= 0, width = 0;
+            bool check;
+
             do
             {
                 Console.WriteLine("Enter height:");
-                string i = Console.ReadLine();
-                check = int.TryParse(i, out height);
+                string heightString = Console.ReadLine();
+                check = int.TryParse(heightString, out height);
                 Console.WriteLine("Enter width:");
-                string j = Console.ReadLine();
-                check = int.TryParse(j, out width);
-            } while (check);
+                string widthString = Console.ReadLine();
+                check = int.TryParse(widthString, out width);
+            } while (check == false);
 
             for (int n = 0; n < height; n++)
             {
