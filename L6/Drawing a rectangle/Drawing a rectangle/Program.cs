@@ -8,21 +8,20 @@ namespace Drawing_a_rectangle
         {
             bool check = false;
 
-            int I= 0, J = 0;
+            int height= 0, width = 0;
             do
             {
-                Console.WriteLine("Enter width:");
+                Console.WriteLine("Enter height:");
                 string i = Console.ReadLine();
-                check = int.TryParse(i, out I);
+                check = int.TryParse(i, out height);
                 Console.WriteLine("Enter width:");
                 string j = Console.ReadLine();
-                check = int.TryParse(j, out J);
-            } while (check == false);
+                check = int.TryParse(j, out width);
+            } while (check);
 
-            int n = 0, m = 0;
-            for (n = 0; n < I; n++)
+            for (int n = 0; n < height; n++)
             {
-                for (m = 0; m < J; m++ )
+                for (int m = 0; m < width; m++ )
                 {
                     Console.Write("*");
                 }
