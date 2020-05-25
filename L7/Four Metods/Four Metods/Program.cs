@@ -91,7 +91,7 @@ namespace Four_Metods
                         }
                     }
 
-                    Console.WriteLine("{0}" + "{1}" + "{2}=" + "{3}",a,act,b,result);
+                    Console.WriteLine("{0}" + "{1}" + "{2}=" + "{3}", a, act, b, result);
                     Console.ReadKey();
                 }
             }
