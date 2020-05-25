@@ -4,12 +4,12 @@ namespace Currency_conversion
 {
     class Program
     {
-        static double Conventionalmoney(double a, double b)
+        static double ConventionalMoney(double a, double b)
         {
             return  a / b;
         }
 
-        static double EnterValue( ref double money)
+        static double EnterValue( double money)
         {
             var stringMoney = Console.ReadLine();
             var check = double.TryParse(stringMoney, out money);
@@ -18,7 +18,7 @@ namespace Currency_conversion
                 return money;
             }
 
-            return EnterValue(ref  money);
+            return EnterValue(money);
         }
         static void Main()
         {
@@ -30,15 +30,15 @@ namespace Currency_conversion
             var carentlyBefore = Console.ReadLine();
 
             Console.WriteLine("Enter the amount of money:");
-            money = EnterValue(ref money);
+            money = EnterValue( money);
             
             Console.WriteLine("Enter what currency you want to receive:");
             carentlyAfter = Console.ReadLine();
 
             Console.WriteLine("Enter the rate to convert to another currency:");
-            course = EnterValue(ref course);
+            course = EnterValue( course);
             
-            result =  (decimal) Conventionalmoney(money, course);
+            result =  (decimal) ConventionalMoney(money, course);
             Console.WriteLine("{0} {1}", result, carentlyAfter);
             Console.ReadKey();
         }
