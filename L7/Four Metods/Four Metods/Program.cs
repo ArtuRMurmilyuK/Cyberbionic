@@ -26,29 +26,29 @@ namespace Four_Metods
 
                 return a / b;
             }
-            else
-            {
-                return 0;
-            }
+            return 0;
+            
         }
 
         static void Main()
         {
-            int a = 0, b = 0;
+            var a=0;
+            var b=0;
             Console.WriteLine("Enter value a:");
 
-            string stringA = Console.ReadLine();
-            bool checkA = Int32.TryParse(stringA, out a);
-            if (checkA == true)
+            var stringA = Console.ReadLine();
+            
+            var checkA = int.TryParse(stringA, out a);
+            if (checkA)
             {
                 Console.WriteLine("Enter value b:");
 
-                string stringB = Console.ReadLine();
-                bool checkB = Int32.TryParse(stringB, out b);
-                if (checkB == true)
+                var stringB = Console.ReadLine();
+                var checkB = int.TryParse(stringB, out b);
+                if (checkB)
                 {
                     Console.WriteLine("Enter arithmetic operation:");
-                    string act = Console.ReadLine();
+                    var act = Console.ReadLine();
                     var result = 0;
                     switch (act)
                     {
@@ -91,7 +91,7 @@ namespace Four_Metods
                         }
                     }
 
-                    Console.WriteLine(result);
+                    Console.WriteLine("{0}" + "{1}" + "{2}=" + "{3}",a,act,b,result);
                     Console.ReadKey();
                 }
             }
