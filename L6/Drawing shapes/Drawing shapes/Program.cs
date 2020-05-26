@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO.MemoryMappedFiles;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Drawing_shapes
 {
@@ -51,10 +49,9 @@ namespace Drawing_shapes
 
                             Console.WriteLine("");
                         }
-                       
-
+                        
                         break;
-                }
+                    }
 
                 case ("4"): //rhombus
                     {
