@@ -6,39 +6,58 @@ namespace Bank
 {
     class Program
     {
-        static void Bank(int sum, int pay, int debt)
+        static void Bank(int sum, int pay, int debt, int min)
         {
             var check = 0;
-            while (check<=pay && sum<= debt)
+            var rep = 0;
+            min = debt / pay;
+            while (check <= pay && rep <= debt)
             {
-                Console.WriteLine("Enter sum payment");
-                sum += int.Parse(Console.ReadLine());
-                check++;
-                if (sum < debt)
+                if (check < pay)
                 {
-                    Console.WriteLine("amount of debt:{0}", debt - sum);
-                }
+                    if (rep < debt)
+                    {
+                        if (check == --pay)
+                        {
+                            Console.WriteLine("This is the last payment.Debt:{0}", debt - rep);
+                        }
+                        Console.WriteLine("Enter sum payment");
+                        sum = int.Parse(Console.ReadLine());
+                        check++;
+                        rep += sum;
+                        
+                        if (sum < min)
+                        {
+                            Console.WriteLine("Value less than minimum payment. Debt: {0}", debt - rep);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Values ​​greater than the minimum contribution. Debt: {0}", debt - rep);
+                            Console.WriteLine("Overpayment {0}", sum - min);
+                        }
 
-                if (sum >= debt)
-                {
-                    Console.WriteLine("No debt");
-                }
-            }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Loan repaid for {0} payments", check);
+                        Console.WriteLine("Overpayment {0}", rep - debt);
+                        break;
 
-            if (sum > debt)
-            {
-                Console.WriteLine("overpayment: {0}", sum-debt );
+                    }
+                } 
+               
             }
+            
         }
         static void Main()
         {
             Console.WriteLine("Enter bank debt: ");
             var debt = int.Parse(Console.ReadLine());
-            int sum = 0;
+            var sum = 0;
             Console.WriteLine("Enter the number of payments:");
             var pay = int.Parse(Console.ReadLine());
-
-            Bank(sum,pay,debt);
+            var min = 0;
+            Bank(sum,pay,debt,min);
             Console.ReadKey();
         }
     }
