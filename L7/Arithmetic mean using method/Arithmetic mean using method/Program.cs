@@ -29,14 +29,13 @@ namespace Arithmetic_mean_using_method
             var thirdnum = 0;
             
             Console.WriteLine("Enter first number:");
-            firstnum =  EnterValue(  firstnum);
+            firstnum =  EnterValue(firstnum);
             Console.WriteLine("Enter second number:");
-            secondnum = EnterValue( secondnum);
+            secondnum = EnterValue(secondnum);
             Console.WriteLine("Enter third number:");
-            thirdnum = EnterValue( thirdnum);
+            thirdnum = EnterValue(thirdnum);
 
-           
-            var result = Calculate( firstnum,  secondnum,  thirdnum);
+            var result = Calculate(firstnum,  secondnum,  thirdnum);
             Console.WriteLine(result);
             Console.ReadKey();
         }
