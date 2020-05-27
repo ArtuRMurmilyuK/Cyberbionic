@@ -6,7 +6,7 @@ namespace Delivery
     {
         static int Factorial(int n)
         {
-            if (n == 0)
+            /* if (n == 0)
             {
                 return 1;
             }
@@ -14,7 +14,9 @@ namespace Delivery
             {
                 return n * Factorial(n - 1);
             }
-            
+        */
+            var result = (n == 0) ? 1 :  n * Factorial(n - 1);
+            return result;
         }
         static void Main()
         {
