@@ -18,11 +18,10 @@ namespace Delivery
         }
         static void Main()
         {
-            var n = 0;
+            
             Console.WriteLine("Enter the number of customers:");
             var num = Console.ReadLine();
-            var check = int.TryParse(num, out n);
-            if (check)
+            if (int.TryParse(num, out var n))
             {
                 n = Factorial(n);
                 Console.WriteLine(n);
