@@ -6,15 +6,6 @@ namespace Delivery
     {
         static int Factorial(int n)
         {
-            /* if (n == 0)
-            {
-                return 1;
-            }
-            else
-            {
-                return n * Factorial(n - 1);
-            }
-        */
             var result = (n == 0) ? 1 :  n * Factorial(n - 1);
             return result;
         }
