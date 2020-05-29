@@ -1,11 +1,11 @@
-TASK
-Create a method that will increase the length of the array passed as an argument by 1 element. 
-Elements of the array must retain their value and the order of the indices. 
-Create a method that takes two arguments, the first argument is of type int [] array, the second argument is of type int value. 
-In the body of the method, implement the ability to add the second argument of the method to the array by index - 0, 
-while the length of the new array should increase by 1 element, 
-and the elements of the resulting array as the first argument should be copied to the new array starting from index - 1.
++TASK
++Create a method that will increase the length of the array passed as an argument by 1 element. 
++Elements of the array must retain their value and the order of the indices. 
++Create a method that takes two arguments, the first argument is of type int [] array, the second argument is of type int value. 
++In the body of the method, implement the ability to add the second argument of the method to the array by index - 0, 
++while the length of the new array should increase by 1 element, 
++and the elements of the resulting array as the first argument should be copied to the new array starting from index - 1.
 
-plan
-Create metod
-Create a method that takes two arguments, the first argument is of type int [] array, the second argument is of type int value. 
++plan
++Create metod
++Create a method that takes two arguments, the first argument is of type int [] array, the second argument is of type int value. 
