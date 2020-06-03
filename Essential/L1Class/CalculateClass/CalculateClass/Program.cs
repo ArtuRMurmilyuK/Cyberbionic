@@ -6,16 +6,7 @@ namespace CalculateClass
     {
         static void Main()
         {
-            var user = new User();
-            user.Test();
-        }
-    }
-
-    public class User
-    {
-        public void Test()
-        {
-
+            
         }
     }
 }
