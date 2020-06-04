@@ -5,23 +5,20 @@
         private  int _firstNumber;
         private  int _secondNumber;
 
-        /*public int FirstNumber
+        public int FirstNumber
         {
-            
             get;
             set;
         }
 
         public int SecondNumber
         {
-            
             get;
             set;
-        }*/
+        }
 
         public Calculate(int firstNumber, int secondNumber)
         {
-            
             _firstNumber = firstNumber;
             _secondNumber = secondNumber;
         }
@@ -36,5 +33,14 @@
             return _firstNumber * _secondNumber;
         }
 
+        public int Odd()
+        {
+            return _firstNumber / _secondNumber;
+        }
+
+        public int Sub()
+        {
+            return _firstNumber - _secondNumber;
+        }
     }
 }

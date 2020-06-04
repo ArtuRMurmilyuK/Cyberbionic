@@ -4,6 +4,16 @@ namespace Increase_array_length
 {
     class Program
     {
+        static int TryParse( int n)
+        {
+            var stringN = Console.ReadLine();
+            if (int.TryParse(stringN, out n))
+            {
+                
+            }
+
+            return n;
+        }
         static void AddValue(int[] array, int value)
         {
             var n = array.Length;
@@ -27,24 +37,21 @@ namespace Increase_array_length
         }
         static void Main()
         {
-            int value = 0;
+            int value = 0, n = 0;
             Console.WriteLine("Enter N");
-            var stringN = Console.ReadLine();
-            if (int.TryParse(stringN, out int n))
+            TryParse(n);
+            int[] array = new int[n];
+            for (int i = 0; i < array.Length; i++)
             {
-                int[] array = new int[n];
-
-                for (int i = 0; i < array.Length; i++)
+                var stringArray = Console.ReadLine();
+                if (int.TryParse(stringArray, out int arr))
                 {
-                    var stringArray = Console.ReadLine();
-                    if (int.TryParse(stringArray, out int arr))
-                    {
-                        array[i] = arr;
-                    }
+                    array[i] = arr;
                 }
-                AddValue(array, value);
-                Console.ReadKey();
             }
+            AddValue(array, value);
+                Console.ReadKey();
+            
         }
     }
 }

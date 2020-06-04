@@ -11,7 +11,7 @@ namespace CalculateClassTest
         [TestInitialize]
         public void Initialize()
         {
-            _target = new Calculate(2, 3);
+            _target = new Calculate(6, 3);
         }
 
         [TestMethod]
@@ -19,7 +19,7 @@ namespace CalculateClassTest
         {
             var result = _target.Add();
 
-            Assert.AreEqual(5, result);
+            Assert.AreEqual(9, result);
         }
 
         [TestMethod]
@@ -27,7 +27,23 @@ namespace CalculateClassTest
         {
             var result = _target.Mul();
 
-            Assert.AreEqual(6, result);
+            Assert.AreEqual(18, result);
+        }
+
+        [TestMethod]
+        public void OddTest()
+        {
+            var result = _target.Odd();
+
+            Assert.AreEqual(2 ,result);
+        }
+
+        [TestMethod]
+        public void SubtractionTest()
+        {
+            var result = _target.Sub();
+
+            Assert.AreEqual( 3 , result);
         }
     }
 }
