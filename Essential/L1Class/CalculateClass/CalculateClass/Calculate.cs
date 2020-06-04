@@ -7,20 +7,34 @@
 
         public int FirstNumber
         {
-            get;
-            set;
+            set
+            {
+                _firstNumber = value;
+            }//Write
+
+            get
+            {
+                return _firstNumber;
+            }//READ
         }
 
         public int SecondNumber
         {
-            get;
-            set;
+            set
+            {
+                _secondNumber = value;
+            }
+
+            get
+            {
+                return _secondNumber;
+            }
         }
 
         public Calculate(int firstNumber, int secondNumber)
         {
-            _firstNumber = firstNumber;
-            _secondNumber = secondNumber;
+            FirstNumber = firstNumber;
+            SecondNumber = secondNumber;
         }
         
         public int Add()

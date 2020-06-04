@@ -1,7 +1,8 @@
--Task
--Create calculator using class. We can input N elements
--Using TDD.
++Task
++Create calculator using class. We can input somes elements
++Using TDD.
 
-plan
-create target 
-Enter variable 
++plan
++create target 
++Create TestMeods
+
