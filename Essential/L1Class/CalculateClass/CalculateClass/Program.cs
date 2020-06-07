@@ -6,7 +6,6 @@ namespace CalculateClass
     {
         static void Main()
         {
-            
         }
     }
 }

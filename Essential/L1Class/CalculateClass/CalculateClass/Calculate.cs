@@ -1,60 +1,28 @@
-﻿namespace CalculateClass
+﻿using System;
+using System.Runtime.InteropServices.ComTypes;
+
+namespace CalculateClass
 {
     public class Calculate
     {
-        private  int _firstNumber;
-        private  int _secondNumber;
-
-        public int FirstNumber
+        public int Add(int firstNumber, int secondNumber)
         {
-            set
-            {
-                _firstNumber = value;
-            }//Write
-
-            get
-            {
-                return _firstNumber;
-            }//READ
+            return firstNumber + secondNumber;
         }
 
-        public int SecondNumber
+        public int Mul(int firstNumber, int secondNumber)
         {
-            set
-            {
-                _secondNumber = value;
-            }
-
-            get
-            {
-                return _secondNumber;
-            }
+            return firstNumber * secondNumber;
         }
 
-        public Calculate(int firstNumber, int secondNumber)
+        public int Odd(int firstNumber, int secondNumber)
         {
-            FirstNumber = firstNumber;
-            SecondNumber = secondNumber;
-        }
-        
-        public int Add()
-        {
-            return _firstNumber + _secondNumber;
+            return firstNumber / secondNumber;
         }
 
-        public int Mul()
+        public int Sub(int firstNumber, int secondNumber)
         {
-            return _firstNumber * _secondNumber;
-        }
-
-        public int Odd()
-        {
-            return _firstNumber / _secondNumber;
-        }
-
-        public int Sub()
-        {
-            return _firstNumber - _secondNumber;
+            return firstNumber - secondNumber;
         }
     }
 }

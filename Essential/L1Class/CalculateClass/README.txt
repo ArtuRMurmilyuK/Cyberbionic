@@ -4,5 +4,4 @@
 
 +plan
 +create target 
-+Create TestMeods
-
++Create TestMethods
