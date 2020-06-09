@@ -15,7 +15,7 @@ namespace CalculateClass
             return firstNumber * secondNumber;
         }
 
-        public int Odd(int firstNumber, int secondNumber)
+        public int Div(int firstNumber, int secondNumber)
         {
             return firstNumber / secondNumber;
         }

@@ -1,3 +1,4 @@
+using System;
 using CalculateClass;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -22,6 +23,13 @@ namespace CalculateClassTest
         }
 
         [TestMethod]
+        
+        public void AddMaxValueTest()
+        {
+             _target.Add(int.MaxValue, 1);
+        }
+
+        [TestMethod]
         public void MulTest()
         {
             var actual = _target.Mul(2, 6);
@@ -29,13 +37,21 @@ namespace CalculateClassTest
         }
 
         [TestMethod]
-        public void OddTest()
+        public void DivTest()
         {
-            var actual = _target.Odd(4, 4);
+            var actual = _target.Div(12, 4);
             Assert.AreEqual(1, actual);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void DivDivideByZeroTest()
+        {
+            _target.Div(12, 0);
+        }
+
+        [TestMethod]
+        
         public void SubTest()
         {
             var actual = _target.Sub(6, 3);
