@@ -10,12 +10,12 @@ namespace AreaOfARectangle
 
         public double AreaCalculator()
         {
-
+            return 0;
         }
 
         public double PerimeterCalculator()
         {
-
+            return 0;
         }
     }
 }
