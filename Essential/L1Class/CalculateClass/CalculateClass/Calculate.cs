@@ -1,26 +1,23 @@
-﻿using System;
-using System.Runtime.InteropServices.ComTypes;
-
-namespace CalculateClass
+﻿namespace CalculateClass
 {
     public class Calculate
     {
-        public int Add(int firstNumber, int secondNumber)
+        public double Add(double firstNumber, double secondNumber)
         {
             return firstNumber + secondNumber;
         }
 
-        public int Mul(int firstNumber, int secondNumber)
+        public double Mul(double firstNumber, double secondNumber)
         {
             return firstNumber * secondNumber;
         }
 
-        public int Div(int firstNumber, int secondNumber)
+        public double Div(i firstNumber, int secondNumber)
         {
             return firstNumber / secondNumber;
         }
 
-        public int Sub(int firstNumber, int secondNumber)
+        public double Sub(int firstNumber, int secondNumber)
         {
             return firstNumber - secondNumber;
         }

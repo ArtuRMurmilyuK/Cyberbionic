@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CalculateClassTest
 {
     [TestClass]
-    public class CalculateTest
+    public class CalculateTests
     {
         private Calculate _target;
 
@@ -23,7 +23,6 @@ namespace CalculateClassTest
         }
 
         [TestMethod]
-        
         public void AddMaxValueTest()
         {
              _target.Add(int.MaxValue, 1);

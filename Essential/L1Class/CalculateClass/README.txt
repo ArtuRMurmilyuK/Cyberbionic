@@ -1,7 +1,3 @@
-+Task
-+Create calculator using class. We can input somes elements
-+Using TDD.
-
-+plan
-+create target 
-+Create TestMethods
+ѕеределать класс на тип Double
+ѕолучить Exepcion ѕри переполнении 
+создать новые тесты дл€ всех возможных вариантов переполнений
