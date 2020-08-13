@@ -1,7 +1,5 @@
-+ Создать проект с MyCalc на СalcApp
-+ переиминовать рабочий класс MyCalc на Programs
-+ Создать отдельно класс Calc(Tests)
-+ Создаю класс с тестами для него строка 3
-+ Сделать инициализацию и поставить ТАРГЕТ!!!
-+ Сделать коммит
++ Create new Project СalcApp
++ Create new class Calc(Tests)
++ Create init and Target!!!
++ commit
 xUnit
