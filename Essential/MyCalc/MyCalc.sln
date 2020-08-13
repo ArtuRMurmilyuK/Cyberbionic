@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalc", "MyCalc\MyCalc.csproj", "{B0B3E8C9-3C44-449C-A849-2BEB599B0A7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCalc", "MyCalc\MyCalc.csproj", "{B0B3E8C9-3C44-449C-A849-2BEB599B0A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalcTests", "MyCalcTests\MyCalcTests.csproj", "{9DE4C0AA-75B1-48C8-8C2B-163B46C427A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCalcTests", "MyCalcTests\MyCalcTests.csproj", "{9DE4C0AA-75B1-48C8-8C2B-163B46C427A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2ABCA1B-4267-4088-A576-38092745BBAC}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
