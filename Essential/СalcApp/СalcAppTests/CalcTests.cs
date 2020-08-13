@@ -1,24 +1,22 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using СalcApp;
 
 namespace СalcAppTests
 {
-    [TestClass]
     public class CalcTests
     {
         private Calc _target;
 
-        [TestInitialize]
-        public void Initialize()
+        public CalcTests()
         {
             _target = new Calc();
         }
 
-        [TestMethod]
+        [Fact]
         public void SumTest()
         {
             var actual = _target.Sum(10, 20);
-            Assert.AreEqual(30, actual);
+            Assert.Equal(30, actual);
         }
     }
 }
