@@ -6,16 +6,11 @@ namespace AreaOfARectangle
     {
         static void Main()
         {
-        }
+            var rectangle = new Rectangle(20, 10);
+            Console.WriteLine("Area: " + rectangle.Area);
+            Console.WriteLine("Perimeter: " + rectangle.Perimeter);
 
-        public double AreaCalculator()
-        {
-            return 0;
-        }
-
-        public double PerimeterCalculator()
-        {
-            return 0;
+            Console.ReadKey();
         }
     }
 }

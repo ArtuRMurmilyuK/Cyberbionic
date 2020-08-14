@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace СalcApp
+namespace CalcApp
 {
     public class Calc
     {

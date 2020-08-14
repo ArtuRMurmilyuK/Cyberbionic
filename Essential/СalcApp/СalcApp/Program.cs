@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace СalcApp
+namespace CalcApp
 {
     class Program
     {

@@ -11,9 +11,8 @@
 -perimeter and area on the screen.
 
 plan
-+создать конструктор Rectangle(double side 1, side 2)
-создать метод double AreaCalculator()
-Создать метод Double PerimeterCalculator()
-создать два свойства Double Area и Double Perimetr С одним методом доступа get
-Сделать ввод для пользователя 2 сторон 
-Сделать вывод на экран площадь и периметр
++ создать конструктор Rectangle(double side 1, side 2)
++ создать метод double AreaCalculator()
++ Создать метод Double PerimeterCalculator()
++ создать два свойства Double Area и Double Perimetr С одним методом доступа get 
++ Сделать вывод на экран площадь и периметр

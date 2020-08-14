@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using СalcApp;
+using CalcApp;
 
-namespace СalcAppTests
+namespace CalcAppTests
 {
     public class CalcTests
     {
