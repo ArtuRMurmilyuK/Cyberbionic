@@ -4,6 +4,9 @@ namespace AreaOfARectangle
 {
     class Program
     {
+        // <summary>
+        // This method displays area and perimeter
+        // </summary>
         static void Main()
         {
             var rectangle = new Rectangle(20, 10);
