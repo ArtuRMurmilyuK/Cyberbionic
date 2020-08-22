@@ -1,34 +1,28 @@
 ﻿using System;
+using PolygonPerimeter.Model;
 
 namespace PolygonPerimeter
 {
-    class Figure
+    public class Figure
     {
-        private Point[] points;
-        //Должен принимать Аргументы типа Point 
-        public Figure()
+        private readonly Point[] _points;
+
+        public Figure(Point[] points)
         {
-            Console.WriteLine("enter number of vertices of your figure");
-            var number = int.Parse(Console.ReadLine());
-            for (int i = 0; i < number; i++)
-            {
-                points[i] = new Point();
-            }
+            _points = points;
         }
-        double LengthSide(Point a, Point b)
+
+        private double LengthSide(Point a, Point b)
         {
             return Math.Sqrt(Math.Pow(a.X - b.X, 2) + Math.Pow(a.Y - b.Y, 2));
         }
-        // Для того чтобы найти периметр многоугольника нам надо сложить все стороны. 
+
         public double PerimeterCalculator()
         {
             var perimeter = 0;
-            for (int i = 1; i < points.Length; i++)
-            {
-                perimeter = (int) LengthSide(points[i - 1], points[i]);
-            }
+            for (var i = 1; i < _points.Length; i++) perimeter = (int) LengthSide(_points[i - 1], _points[i]);
 
-            perimeter += (int) LengthSide(points[0], points[points.Length]);
+            perimeter += (int) LengthSide(_points[0], _points[_points.Length]);
             return perimeter;
         }
     }
