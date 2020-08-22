@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Channels;
 
 namespace Converter
 {
@@ -6,6 +7,7 @@ namespace Converter
     {
         static void Main()
         {
+            Converter.Converters(2, 3, 5);
         }
     }
 }
