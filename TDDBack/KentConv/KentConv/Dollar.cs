@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace KentConvTest
+namespace KentConv
 {
-    class Dollar
+    public class Dollar : Money
     {
         public Dollar(int amount)
         {
@@ -16,11 +14,10 @@ namespace KentConvTest
             return new Dollar(amount * multiplier);
         }
 
-        private int amount;
-        public Boolean equals(Object obj)
+        public override int GetHashCode()
         {
-            Dollar dollar = (Dollar)obj;
-            return amount == dollar.amount;
+            return amount.GetHashCode();
         }
+
     }
 }
