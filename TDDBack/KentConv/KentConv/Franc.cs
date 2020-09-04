@@ -4,19 +4,26 @@ namespace KentConv
 {
     public class Franc : Money
     {
-        public Franc(int amount)
+        private String currency;
+        public Franc(int amount, String currency)
         {
             this.amount = amount;
+            this.currency = currency;
         }
 
-        public Franc Times(int multiplier)
+        public override Money Times(int multiplier)
         {
-            return new Franc(amount * multiplier);
+            return Money.franc(amount * multiplier);
         }
 
         public override int GetHashCode()
         {
             return amount.GetHashCode();
+        }
+
+        String currency()
+        {
+            return currency;
         }
     }
 }

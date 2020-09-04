@@ -4,14 +4,16 @@ namespace KentConv
 {
     public class Dollar : Money
     {
-        public Dollar(int amount)
+        private String currency;
+        public Dollar(int amount, String currency)
         {
             this.amount = amount;
+            this.currency = currency;
         }
 
-        public Dollar Times(int multiplier)
+        public override Money Times(int multiplier)
         {
-            return new Dollar(amount * multiplier);
+            return Money.dollar(amount * multiplier);
         }
 
         public override int GetHashCode()
@@ -19,5 +21,9 @@ namespace KentConv
             return amount.GetHashCode();
         }
 
+        public String currency()
+        {
+            return currency;
+        }
     }
 }
