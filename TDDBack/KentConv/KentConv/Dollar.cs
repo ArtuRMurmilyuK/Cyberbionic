@@ -5,7 +5,7 @@ namespace KentConv
     public class Dollar : Money
     {
         private String currency;
-        public Dollar(int amount, String currency)
+        public Dollar(int amount, String currency) : base(amount, currency)
         {
             this.amount = amount;
             this.currency = currency;
@@ -21,9 +21,6 @@ namespace KentConv
             return amount.GetHashCode();
         }
 
-        public String currency()
-        {
-            return currency;
-        }
+        public String Сurrency => currency;
     }
 }

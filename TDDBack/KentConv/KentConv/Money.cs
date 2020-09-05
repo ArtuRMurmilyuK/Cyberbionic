@@ -31,7 +31,7 @@ namespace KentConv
             return currency;
         }
 
-        Money(int amount, string currency)
+        public Money(int amount, string currency)
         {
             this.amount = amount;
             this.currency = currency;
