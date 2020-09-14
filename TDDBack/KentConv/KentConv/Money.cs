@@ -1,40 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace KentConv
 {
     public abstract class Money
     {
-        public abstract Money Times(int multiplier);
-        public int amount;
-        protected String currency;
+        private readonly int _amount;
+        private readonly string _currency;
 
-        public Boolean equals(Object obj)
+        protected Money(int amount, string currency)
         {
-            Money money = (Money)obj;
-            return amount == money.amount && GetType() == money.GetType();// getClass.equals(money.getClass) in JAVA
+            _amount = amount;
+            _currency = currency;
         }
 
-        public static Money dollar(int amount)
+        public int Amount
+        {
+            get { return _amount; }
+        }
+
+        public string Currency
+        {
+            get { return _currency; }
+        }
+
+        public abstract Money Times(int multiplier);
+
+        public static Money Dollar(int amount)
         {
             return new Dollar(amount, "USD");
         }
 
-        public static Money franc(int amount)
+        public static Money Franc(int amount)
         {
             return new Franc(amount, "CHF");
         }
 
-        String currency()
+        public override bool Equals(object obj)
         {
-            return currency;
-        }
+            if(obj == null) throw new ArgumentNullException(nameof(obj));
 
-        public Money(int amount, string currency)
-        {
-            this.amount = amount;
-            this.currency = currency;
+            var money = (Money)obj;
+            return _amount == money._amount 
+                   && _currency == money._currency 
+                   && GetType() == money.GetType();
         }
     }
 }
