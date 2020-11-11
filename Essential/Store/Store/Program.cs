@@ -1,4 +1,6 @@
-﻿namespace Store
+﻿using System.Collections.Generic;
+
+namespace Store
 {
     class Program
     {
