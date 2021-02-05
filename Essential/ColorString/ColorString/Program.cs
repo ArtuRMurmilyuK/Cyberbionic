@@ -2,7 +2,7 @@
 
 namespace ColorString
 {
-    enum Color
+    enum Color: int
     {
         Red = 1,
         Yellow = 2,
@@ -14,26 +14,32 @@ namespace ColorString
     {
         public static void Print(string stroka, int color)
         {
-            if (color == (int) Color.Red)
+            switch (color)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else if(color == (int)Color.Yellow)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-            }
-            else if (color == (int) Color.Green)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                case 1:
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+                }
+                case 2:
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                }
+                case 3:
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    break;
+                }
+                case 4:
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    break;
+                }
             }
         }
-
-        
     }
+
     class Program
     {
         static void Main(string[] args)
