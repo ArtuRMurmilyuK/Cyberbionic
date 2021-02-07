@@ -1,6 +1,8 @@
-﻿namespace EmployeeBonus
+﻿using System;
+
+namespace EmployeeBonus
 {
-    public enum Post : int
+    public enum Post  
     {
         Secretary = 160,
         Mechanics = 100,
@@ -10,7 +12,7 @@
     {
         static void Main()
         {
-            Accauntant.Bonus();
+            Console.WriteLine(Accauntant.Bonus());
         }
     }
 }
