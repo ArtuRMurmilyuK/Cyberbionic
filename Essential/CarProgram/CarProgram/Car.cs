@@ -2,13 +2,13 @@
 {
     class Car
     {
-        private readonly IEngine _engine;
-        private readonly ITransmission _transmission;
+        private  IEngine _engine;
+        private  ITransmission _transmission;
 
         public Car(IEngine engine, ITransmission transmission)
         {
-            engine = _engine;
-            transmission = _transmission;
+            _engine = engine;
+            _transmission = transmission;
         }
 
         public void ChosenEngine()
@@ -19,6 +19,16 @@
         public void ChosenTransmission()
         {
             _transmission.ChoiceTransmission();
+        }
+
+        public IEngine Engine
+        {
+            get { return _engine; }
+        }
+
+        public ITransmission Transmission
+        {
+            get { return _transmission; }
         }
     }
 }

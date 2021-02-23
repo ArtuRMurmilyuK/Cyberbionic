@@ -11,14 +11,14 @@ namespace CarProgram
     {
         public void ChoiceTransmission()
         {
-            Console.WriteLine(" It`s auto transmission");
+            Console.WriteLine("It`s auto transmission");
         }
     }
     internal class ManualTransmission : ITransmission
     {
         public void ChoiceTransmission()
         {
-            Console.WriteLine(" It`s manual transmission");
+            Console.WriteLine("It`s manual transmission");
         }
     }
 }
