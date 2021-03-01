@@ -6,32 +6,27 @@ namespace CatchingExceptions
     {
         static void Main()
         {
-           EnterNumb();
+            int x = int.Parse(Console.ReadLine());
+            int y = int.Parse(Console.ReadLine());
+            
+            ExceptionMyDel(x,y);
+            
         }
 
-        static void EnterNumb()
+        public static void ExceptionMyDel(int x , int y)
         {
             try
             {
-                Console.Write("Enter x: ");
-                int x = int.Parse(Console.ReadLine());
-
-                Console.Write("Enter y: ");
-                int y = int.Parse(Console.ReadLine());
-
-                int result = MyDel(x, y);
-                Console.WriteLine("Result: " + result);
+                Console.WriteLine(MyDel(x, y));
             }
 
             catch (DivideByZeroException)
             {
                 Console.WriteLine("Div on 0 detected!");
-                Main();
             }
             catch (FormatException)
             {
                 Console.WriteLine("this is not a number");
-                Main();
             }
         }
 
