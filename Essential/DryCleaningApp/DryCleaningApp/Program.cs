@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DryCleaningApp
 {
@@ -6,43 +7,108 @@ namespace DryCleaningApp
     {
         static void Main()
         {
-            var dryCleaningService = new DryCleaningService();
+            Stock stock = new Stock();
+            
+            Client client = new Client("Olga", stock);
+            
+            stock.InitItem("Dress");
+            
+            var client1 = new Client("Max", stock);
+            var cleaningService = new CleaningService(client1.Name, stock);
 
-            dryCleaningService.ItemIsReady += MessageHandler;
-            dryCleaningService.CleanItem(new Client() { ClientName = "Ivan Ivanich" }, new Item() { ItemType = "Dress" });
-            dryCleaningService.CleanItem(new Client() { ClientName = "Petro" }, new Item() { ItemType = "Suit" });
+            cleaningService.ItemIsReady += MessageHandler;
 
-            dryCleaningService.ItemIsReady -= MessageHandler;
-            dryCleaningService.CleanItem(new Client() { ClientName = "Oleg" }, new Item() { ItemType = "Trousers" });
+            stock.InitItem("shorts");
+
+            Console.Read();
         }
 
-        private static void MessageHandler(object sender, string messageFromTheService)
+        private static void MessageHandler(object sender, string messageFromTheService) 
         {
-            Console.WriteLine($"Dear {sender}, your " + messageFromTheService);
+            Console.WriteLine($"Dear {sender}," + messageFromTheService);
+        }
+    }
+
+    interface IObserver
+    {
+        void Update(Object ob);
+    }
+
+    interface IObservable
+    {
+        void RegisterObserver(IObserver o);
+    }
+
+    class Stock : IObservable
+    {
+        private readonly StockInfo _sInfo;
+
+        private readonly List<IObserver> _observers;
+        public Stock()
+        {
+            _observers = new List<IObserver>();
+            _sInfo = new StockInfo();
+        }
+        public void RegisterObserver(IObserver o)
+        {
+            _observers.Add(o);
         }
 
+        public void NotifyObservers()
+        {
+            foreach (IObserver o in _observers)
+            {
+                o.Update(_sInfo);
+            }
+        }
+
+        public void InitItem(string item)
+        {
+            _sInfo.ItemName = item;
+            NotifyObservers();
+        }
     }
 
-    public class Item
+    class StockInfo
     {
-        public string ItemType { get; set; }
+        public string ItemName { get; set; }
     }
 
-    public class Client
+    class Client : IObserver
     {
-        public string ClientName { get; set; }
+        public string Name { get; set; }
+
+        public Client(string name, IObservable obs)
+        {
+            Name = name;
+            obs.RegisterObserver(this);
+        }
+        public void Update(object ob)
+        {
+            StockInfo sInfo = (StockInfo)ob;
+
+            Console.WriteLine($"{Name} brought {sInfo.ItemName}.");
+        }
     }
 
-    public class DryCleaningService
+    class CleaningService : IObserver
     {
+        public string Name { get; set; }
+
         public event EventHandler<string> ItemIsReady;
 
-        public void CleanItem(Client someClient, Item someItem)
+        public CleaningService(string name, IObservable obs)
         {
-            Console.WriteLine("object cleaning");
-            Console.WriteLine("finished working");
+            Name = name;
+            obs.RegisterObserver(this);
+        }
+        public void Update(object ob)
+        {
+            StockInfo sInfo = (StockInfo)ob;
 
-            ItemIsReady?.Invoke(someClient.ClientName, $"item {someItem.ItemType} is ready.");
+            Console.WriteLine("{0}, we clean your {1} ", Name , sInfo.ItemName);
+
+            ItemIsReady?.Invoke(Name, $"your {sInfo.ItemName} are ready");
         }
     }
 }
