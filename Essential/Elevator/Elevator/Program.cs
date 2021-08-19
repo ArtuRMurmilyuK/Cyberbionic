@@ -1,94 +1,89 @@
-﻿using System;
-using System.Linq;
-using System.Text;
+﻿using System.Threading;
 
 namespace Elevator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-          Build();
-          BuildElevator();
-          Build();
-          Build();
-        }
+            Elevator elevator = new Elevator();
+            ElevatorController floorController = new ElevatorController(elevator);
 
-        static void Build()
-        {
-            var build = new Floor();
-
-            build.CeilingAndFloor();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.CeilingAndFloor();
-        }
-        static void BuildElevator()
-        {
-            var build = new Elevator();
-
-            build.CeilingAndFloor();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.Walls();
-            build.CeilingAndFloor();
+            floorController.CallElevator(3);
+            elevator. MoveElevator(5);
         }
     }
 
-    class Floor
+    public class Elevator
     {
-        StringBuilder sbCeiling = new StringBuilder("**********");
+        public int CurrentFloor { get; set; }
 
-        public void CeilingAndFloor()
+        public void MoveElevator(int floor)
         {
-             Console.Write(sbCeiling.ToString());
-             
-             Console.WriteLine();
+            if (floor > CurrentFloor)
+            {
+                Up(floor);
+                return;
+            }
+
+            Down(floor);
         }
 
-        public void Walls()
+        private void Down(int floor)
         {
-            StringBuilder sbWalls = new StringBuilder("*        *");
-            
-            Console.Write(sbWalls.ToString());
-            Console.WriteLine();
+            for (int i = floor; i > CurrentFloor; i--)
+            {
+                CurrentFloor -= 1;
+                Thread.Sleep(5000);
+            }
+        }
+
+        private void Up(int floor)
+        {
+            for (int i = CurrentFloor; i < floor; i++)
+            {
+                CurrentFloor += 1;
+                Thread.Sleep(5000);
+            }
         }
     }
 
-    class Elevator
+    public class ElevatorController
     {
-        StringBuilder sb = new StringBuilder();
-        public void CeilingAndFloor()
+        private Elevator _elevator;
+
+        public ElevatorController(Elevator elevator)
         {
-            Console.Write(' ');
-            for (int i = 0; i < 8; i++)
-            {
-                Console.Write('*');
-            }
-            Console.WriteLine();
+            _elevator = elevator;
         }
 
-        public void Walls()
+        public void CallElevator(int floor)
         {
-            Console.Write(' ');
-            for (int i = 0; i < 8; i++)
+            if (floor > _elevator.CurrentFloor)
             {
-
-                if (i == 0 || i == 7)
-                {
-                    Console.Write('*');
-                }
-                else
-                {
-                    Console.Write(' ');
-                }
+                Up(floor);
+                return;
             }
-            Console.WriteLine();
+
+            Down(floor);
+        }
+
+        private void Down(int floor)
+        {
+            for (int i = floor; i > _elevator.CurrentFloor; i--)
+            {
+                _elevator.CurrentFloor -= 1;
+                Thread.Sleep(5000);
+            }
+        }
+
+        private void Up(int floor)
+        {
+            for (int i = _elevator.CurrentFloor; i < floor; i++)
+            {
+                _elevator.CurrentFloor += 1;
+                Thread.Sleep(5000);
+            }
         }
     }
 }
