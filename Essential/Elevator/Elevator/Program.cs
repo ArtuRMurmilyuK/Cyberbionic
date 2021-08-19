@@ -6,21 +6,49 @@ namespace Elevator
     {
         static void Main()
         {
-            Elevator elevator = new Elevator();
-            ElevatorController floorController = new ElevatorController(elevator);
+            Person person = new Person();
+            
+            person.CallElevator(5);
+            person.MoveAtFloor(9);
+        }
+    }
 
-            floorController.CallElevator(3);
-            elevator. MoveElevator(5);
+    public class Person
+    {
+        private static readonly Elevator _elevator = new Elevator();
+
+        private readonly ElevatorController _elevatorController = new ElevatorController(_elevator);
+        readonly FloorController _floorController = new FloorController(_elevator);
+
+        //Можно методы Call and Move вынести в интерфейс. А потом реализацию разную для панели управления и юзера
+        public void CallElevator(int floor)
+        {
+            _elevatorController.CallElevator(floor);
+        }
+
+        public void MoveAtFloor(int floor)
+        {
+            _floorController.CallElevator(floor);
         }
     }
 
     public class Elevator
     {
         public int CurrentFloor { get; set; }
+    }
 
-        public void MoveElevator(int floor)
+    public class ElevatorController
+    {
+        private readonly Elevator _elevator;
+
+        public ElevatorController(Elevator elevator)
         {
-            if (floor > CurrentFloor)
+            _elevator = elevator;
+        }
+
+        public void CallElevator(int floor)
+        {
+            if (floor > _elevator.CurrentFloor)
             {
                 Up(floor);
                 return;
@@ -31,28 +59,30 @@ namespace Elevator
 
         private void Down(int floor)
         {
-            for (int i = floor; i > CurrentFloor; i--)
+            for (int i = floor; i > _elevator.CurrentFloor; i--)
             {
-                CurrentFloor -= 1;
+                _elevator.CurrentFloor -= 1;
                 Thread.Sleep(5000);
             }
         }
 
         private void Up(int floor)
         {
-            for (int i = CurrentFloor; i < floor; i++)
+            for (int i = _elevator.CurrentFloor; i < floor; i++)
             {
-                CurrentFloor += 1;
+                _elevator.CurrentFloor += 1;
                 Thread.Sleep(5000);
             }
         }
+
+
     }
 
-    public class ElevatorController
+    public class FloorController
     {
-        private Elevator _elevator;
+        private readonly Elevator _elevator;
 
-        public ElevatorController(Elevator elevator)
+        public FloorController(Elevator elevator)
         {
             _elevator = elevator;
         }
