@@ -20,7 +20,7 @@ namespace Elevator
         private readonly ElevatorController _elevatorController = new ElevatorController(_elevator);
         readonly FloorController _floorController = new FloorController(_elevator);
 
-        //Можно методы Call and Move вынести в интерфейс. А потом реализацию разную для панели управления и users
+        //Можно методы Call and Move вынести в интерфейс. А потом реализацию разную для панели управления и user
         public void CallElevator(int floor)
         {
             _elevatorController.CallElevator(floor);
