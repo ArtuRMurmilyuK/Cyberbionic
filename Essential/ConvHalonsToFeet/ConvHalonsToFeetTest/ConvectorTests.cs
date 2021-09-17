@@ -7,6 +7,7 @@ namespace ConvHalonsToFeetTest
     public class ConvectorTests
     {
         private readonly Convector _target;
+        private readonly double _tolerance = 0.001;
 
         public ConvectorTests()
         {
@@ -16,15 +17,16 @@ namespace ConvHalonsToFeetTest
         [Fact]
         public void Transformation()
         {
-            // Arrange
-            const double oneCubicFoot = 7.481;
+            // arrange
             var gallon = 15;
 
-            // Act
-            var cubicFootResult = Math.Round(gallon / oneCubicFoot, 3);
+            var expected = 2.005;
 
-            // Assert
-            Assert.Equal(2.005, cubicFootResult);
+            // action
+            var actual = _target.GallonToFoot(gallon);
+
+            // assert
+            Assert.True(expected - actual < _tolerance);
         }
     }
 }
