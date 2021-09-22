@@ -11,14 +11,18 @@ namespace CheckIfLetterIsLowercaseApp
 
     public class IsLowerSample
     {
-        public int Check(in char ch)
+        public bool Check(char ch)
         {
-            if (Char.IsLower(ch) == true) 
-            {
-                return 1;
-            }
+            var res = Letter.IsLower(ch) ;
+            return res;
+        }
+    }
 
-            return 0;
+    public static class Letter
+    {
+        public static bool IsLower(this char ch)
+        {
+            return Char.IsLower(ch);
         }
     }
 }

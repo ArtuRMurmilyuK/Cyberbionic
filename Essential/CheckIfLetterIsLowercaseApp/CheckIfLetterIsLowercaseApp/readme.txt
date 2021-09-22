@@ -1,2 +1,2 @@
-﻿- Write a program thattakes a letter from the user and then outputs a null 
-- or non-null value depending on whether the letter is lowercase or not
+﻿Напишите программу, которая
+принимает букву от пользователя, а затем выводит нулевое или ненулевое значение в зависимости от того, является ли буква строчной или нет.

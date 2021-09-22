@@ -22,7 +22,7 @@ namespace CheckIfLetterIsLowercaseAppTests
             var actual = _target.Check(ch);
 
             // assert
-            Assert.Equal(1, actual);
+            Assert.True(actual);
         }
     }
 }
