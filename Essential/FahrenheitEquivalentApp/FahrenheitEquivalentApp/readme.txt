@@ -1,0 +1,2 @@
+﻿- Temperatures measured in degrees Celsius can be converted to degrees Fahrenheit by multiplying by 9/5 and adding to 32.
+- Write a program that asks for temperature in degrees Celsius and displays its Fahrenheit equivalent.
