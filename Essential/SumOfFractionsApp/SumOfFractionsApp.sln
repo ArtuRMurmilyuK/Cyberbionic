@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfFractionsApp", "SumOfFractionsApp\SumOfFractionsApp.csproj", "{B64D2532-EEE1-4219-B08D-9B3084BA48AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfFractionsAppTests", "SumOfFractionsAppTests\SumOfFractionsAppTests.csproj", "{033ED572-F179-465F-94B5-62358208F625}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B64D2532-EEE1-4219-B08D-9B3084BA48AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64D2532-EEE1-4219-B08D-9B3084BA48AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64D2532-EEE1-4219-B08D-9B3084BA48AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64D2532-EEE1-4219-B08D-9B3084BA48AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033ED572-F179-465F-94B5-62358208F625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033ED572-F179-465F-94B5-62358208F625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033ED572-F179-465F-94B5-62358208F625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033ED572-F179-465F-94B5-62358208F625}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC75FB74-BFE5-419A-9BDF-3978B699C61A}
+	EndGlobalSection
+EndGlobal
