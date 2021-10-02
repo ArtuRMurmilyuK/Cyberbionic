@@ -53,7 +53,7 @@ namespace SumOfFractionsApp
             var fraction1 = ImproperFractionCon(_firstFraction);
             var fraction2 = ImproperFractionCon(_secondFraction);
 
-            var numerical = Int32.Parse(fraction1[0].ToString()) + Int32.Parse(fraction2[0].ToString());
+            var numerical = int.Parse(fraction1[0].ToString()) + int.Parse(fraction2[0].ToString());
 
             var fraction = $"{numerical}/{FindingTheDenominator()}";
 
