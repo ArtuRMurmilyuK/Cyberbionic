@@ -1,13 +1,12 @@
-﻿using System;
-
-namespace SumOfFractionsApp
+﻿namespace SumOfFractionsApp
 {
     class Program
     {
         static void Main()
         {
-            var operation = new FractionOperation("1/2", "2/5");
-            Console.WriteLine(operation.SumFractions());
+            var calc = new Calculator();
+            var cons = new MyConsole();
+            cons.Display(calc.SumFractions());
         }
     }
 }
