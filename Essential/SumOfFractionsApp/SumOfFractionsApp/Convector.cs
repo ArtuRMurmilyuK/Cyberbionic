@@ -1,4 +1,6 @@
-﻿namespace SumOfFractionsApp
+﻿using SumOfFractionsApp.Models;
+
+namespace SumOfFractionsApp
 {
     public class Convector
     {
@@ -7,7 +9,7 @@
 
         public  Convector(string str)
         {
-            _fraction1 = new Fraction { Denominator = StringToFraction(str)[1], Numerator = StringToFraction(str)[0] };
+            _fraction1 = new Fraction (StringToFraction(str)[1], StringToFraction(str)[0]);
         }
 
         public char[] StringToFraction(string str)

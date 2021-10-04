@@ -1,11 +1,15 @@
-﻿namespace SumOfFractionsApp
+﻿namespace SumOfFractionsApp.Models
 {
     public class Fraction
     {
-        public int Numerator { get; set; }
-        public int Denominator { get; set; }
-/*
-        public string StringFraction { get; set; }
-*/
+        public Fraction(double numerator, double denominator)
+        {
+            Numerator = numerator;
+            Denominator = denominator;
+        }
+
+        public double Numerator { get; }
+        public double Denominator { get; }
+        //public string StringFraction { get; }
     }
 }

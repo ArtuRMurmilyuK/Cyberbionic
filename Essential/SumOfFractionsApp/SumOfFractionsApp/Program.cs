@@ -1,12 +1,14 @@
-﻿namespace SumOfFractionsApp
+﻿using SumOfFractionsApp.Models;
+
+namespace SumOfFractionsApp
 {
     class Program
     {
         static void Main()
         {
-            var calc = new Calculator();
-            var cons = new MyConsole();
-            cons.Display(calc.SumFractions());
+           
+            var cons = new MyConsole(new Fraction(1,2), new Calculator());
+            cons.DisplaySumFraction();
         }
     }
 }
