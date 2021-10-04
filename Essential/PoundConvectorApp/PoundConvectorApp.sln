@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoundConvectorApp", "PoundConvectorApp\PoundConvectorApp.csproj", "{FF9A59D5-09C5-4F49-AA1A-53A4B0655DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoundConvectorAppTests", "PoundConvectorAppTests\PoundConvectorAppTests.csproj", "{13E0F018-F78F-40BF-8A93-430145F40E05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF9A59D5-09C5-4F49-AA1A-53A4B0655DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9A59D5-09C5-4F49-AA1A-53A4B0655DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9A59D5-09C5-4F49-AA1A-53A4B0655DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9A59D5-09C5-4F49-AA1A-53A4B0655DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E0F018-F78F-40BF-8A93-430145F40E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E0F018-F78F-40BF-8A93-430145F40E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E0F018-F78F-40BF-8A93-430145F40E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E0F018-F78F-40BF-8A93-430145F40E05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {018ECF1F-0CE0-493F-9453-CE5AA960993F}
+	EndGlobalSection
+EndGlobal
