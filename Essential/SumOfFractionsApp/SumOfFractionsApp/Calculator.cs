@@ -4,44 +4,30 @@ namespace SumOfFractionsApp
 {
     public class Calculator
     {
-        private Fraction _fraction1;
-        private Fraction _fraction2;
+        private double _denominator;
 
-        public Calculator()
+        public double FindingTheDenominator(Fraction a , Fraction b )
         {
-            InitFraction();
-        }
-
-        public void InitFraction()
-        {
-            _fraction1 = new Fraction(1, 2);
-            _fraction2 = new Fraction(2, 5);
-        }
-        public double FindingTheDenominator()
-        {
-            var common = 0;
-
-            for (int i = 1; i <= _fraction1.Denominator * _fraction2.Denominator; i++)
+            for (int i = 1; i <= a.Denominator * b.Denominator; i++)
             {
-                if (i % _fraction1.Denominator == 0 && i % _fraction2.Denominator == 0)
+                if (i % a.Denominator == 0 && i % b.Denominator == 0)
                 {
-                    common = i;
+                    _denominator = i;
                     break;
                 }
             }
 
-            return common;
+            return _denominator;
         }
 
-        public Fraction SumFractions()
+        public Fraction SumFractions(Fraction a, Fraction b)
         {
+            FindingTheDenominator(a, b);
 
-            var numerical = _fraction1.Numerator * (FindingTheDenominator() / _fraction1.Denominator) +
-                            _fraction2.Numerator * (FindingTheDenominator() / _fraction2.Denominator);
+            var numerical = a.Numerator * (_denominator / a.Denominator) +
+                            b.Numerator * (_denominator / b.Denominator);
 
-            var fraction = new Fraction(numerical, FindingTheDenominator());
-
-            return fraction;
+            return new Fraction(numerical, _denominator);
         }
     }
 }

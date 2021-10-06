@@ -1,30 +1,16 @@
-﻿using SumOfFractionsApp.Models;
+﻿using System;
+using SumOfFractionsApp.Models;
 
 namespace SumOfFractionsApp
 {
     public class Convector
     {
-        private readonly Fraction _fraction1;
-        private readonly Calculator _calculator;
-
-        public  Convector(string str)
+        public Fraction StringToFraction(string str)
         {
-            _fraction1 = new Fraction (StringToFraction(str)[1], StringToFraction(str)[0]);
-        }
+            string[] newSting = str.Split(new char[] { '/' });
+            int[] array = {Convert.ToInt32(newSting[0]), Convert.ToInt32(newSting[1])};
 
-        public char[] StringToFraction(string str)
-        {
-            char[] newArray = { str[0], str[2] };
-            
-            return newArray;
+            return new Fraction(array[0], array[1]);
         }
-        
-        //public string ImproperFraction(string arg)
-        //{
-        //    
-        //    var improperFraction = $"{_fraction1.Numerator * (_calculator.FindingTheDenominator() / _fraction1.Denominator)}/{_calculator.FindingTheDenominator()}";
-        //
-        //    return improperFraction;
-        //}
     }
 }

@@ -10,6 +10,5 @@
 
         public double Numerator { get; }
         public double Denominator { get; }
-        //public string StringFraction { get; }
     }
 }

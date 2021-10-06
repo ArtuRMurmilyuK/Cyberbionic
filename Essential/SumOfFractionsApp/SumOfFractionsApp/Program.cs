@@ -1,4 +1,5 @@
-﻿using SumOfFractionsApp.Models;
+﻿using System.Linq.Expressions;
+using SumOfFractionsApp.Models;
 
 namespace SumOfFractionsApp
 {
@@ -6,9 +7,15 @@ namespace SumOfFractionsApp
     {
         static void Main()
         {
-           
-            var cons = new MyConsole(new Fraction(1,2), new Calculator());
-            cons.DisplaySumFraction();
+            var convector = new Convector();
+            var console = new ConsoleWrapper();
+            var calc = new Calculator();
+
+            Fraction a = convector.StringToFraction("1/2");
+            Fraction b = convector.StringToFraction("2/5");
+
+            var newFraction = calc.SumFractions(a, b);
+            console.WriteLine($"{newFraction.Numerator}/{newFraction.Denominator}");
         }
     }
 }
