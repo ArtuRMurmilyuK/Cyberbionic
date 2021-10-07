@@ -1,48 +1,37 @@
 ﻿using System;
+using PoundConvectorApp.Models;
 
 namespace PoundConvectorApp
 {
     class Convector
     {
-        private Values _values;
-
-        public Convector()
+        public NewPound NewPound(decimal pound, decimal shilling, decimal pennies)
         {
-            Init();
+            var newPennies = ShillingToPennies(pound, shilling, pennies);
+            var pounds = PenniesToPound(pound, shilling, pennies);
+
+            var newPound = pounds != 0
+                ? new NewPound(pound + pounds, Math.Round(newPennies) - 100 * pounds)
+                : new NewPound(pound, Math.Round(newPennies));
+
+            return newPound;
         }
 
-        public void Init()
+        public int PenniesToPound(decimal pound, decimal shilling, decimal pennies)
         {
-            _values = new Values(7, 22, 9); 
-        }
+            var newPennies = ShillingToPennies(pound, shilling, pennies);
 
-        public double NewPound()
-        {
-            var result = PenniesToPound() != 0 
-                ? $"{_values._pound+ PenniesToPound()},{Math.Round(ShillingToPennies()) - 100 * PenniesToPound()}"
-                : $"{ _values._pound},{Math.Round(ShillingToPennies())}";
-
-            return StingToDouble(result);
-        }
-
-        public int PenniesToPound()
-        {
-            if (ShillingToPennies() >= 100)
+            if (newPennies >= 100)
             {
-                return  (int)(ShillingToPennies() / 100);
+                return  (int) (newPennies / 100);
             }
 
             return 0;
         }
 
-        public double StingToDouble(string str)
+        public decimal ShillingToPennies(decimal pound, decimal shilling, decimal pennies)
         {
-            return Convert.ToDouble(str);
-        }
-
-        public double ShillingToPennies()
-        {
-            return  (_values._shilling * ConsMoney.ShillingToPennies + _values._pennies) / 2.4;
+            return  (shilling * MoneyConstants.ShillingToPennies + pennies) / (decimal) 2.4;
         }
     }
 }

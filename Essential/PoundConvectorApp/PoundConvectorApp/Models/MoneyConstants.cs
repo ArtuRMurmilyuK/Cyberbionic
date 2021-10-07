@@ -1,6 +1,6 @@
-﻿namespace PoundConvectorApp
+﻿namespace PoundConvectorApp.Models
 {
-    public struct ConsMoney
+    public struct MoneyConstants
     {
         public const int PoundToShilling = 20;
         public const int ShillingToPennies = 12;

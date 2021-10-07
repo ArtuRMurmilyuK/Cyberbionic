@@ -4,8 +4,10 @@
     {
         static void Main()
         {
-            var cons = new MyConsole();
-            cons.Display();
+            var conv = new Convector();
+
+            var console = new ConsoleWrapper();
+            console.WriteLine(conv.NewPound(7, 22, 9).Pennies);
         }
     }
 }
