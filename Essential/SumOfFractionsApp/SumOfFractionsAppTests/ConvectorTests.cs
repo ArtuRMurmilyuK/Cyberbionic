@@ -14,7 +14,7 @@ namespace SumOfFractionsAppTests
         }
 
         [Fact]
-        public void CreateFractionFromString()
+        public void CreateFractionFromStringTest()
         {
             //arrange
             string str = "1/2";

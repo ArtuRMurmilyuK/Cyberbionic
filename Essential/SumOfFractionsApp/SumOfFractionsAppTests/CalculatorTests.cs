@@ -14,11 +14,10 @@ namespace SumOfFractionsAppTests
         }
 
         [Fact]
-        public void Sum_Return9_10()
+        public void Fractions_Sum_Fraction()
         {
             //arrange
-            double denominator = 10; 
-
+            double denominator = 10;
             Fraction var1 = new Fraction(1,2);
             Fraction var2 = new Fraction(2, 5);
             var expected = new Fraction(9,10);
