@@ -6,7 +6,7 @@ namespace PoundConvectorApp
     {
         public void WriteLine(object obj)
         {
-            Console.WriteLine(obj);
+            Console.WriteLine(Math.Round((decimal) obj));
         }
 
         public void Write(object obj)

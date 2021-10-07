@@ -7,7 +7,7 @@
             var conv = new Convector();
 
             var console = new ConsoleWrapper();
-            console.WriteLine(conv.NewPound(7, 22, 9).Pennies);
+            console.WriteLine(conv.NewPound(7, 17, 9).Pound);
         }
     }
 }

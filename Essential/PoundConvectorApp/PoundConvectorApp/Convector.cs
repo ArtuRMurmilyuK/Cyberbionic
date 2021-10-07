@@ -3,7 +3,7 @@ using PoundConvectorApp.Models;
 
 namespace PoundConvectorApp
 {
-    class Convector
+    public class Convector
     {
         public NewPound NewPound(decimal pound, decimal shilling, decimal pennies)
         {
@@ -11,27 +11,27 @@ namespace PoundConvectorApp
             var pounds = PenniesToPound(pound, shilling, pennies);
 
             var newPound = pounds != 0
-                ? new NewPound(pound + pounds, Math.Round(newPennies) - 100 * pounds)
-                : new NewPound(pound, Math.Round(newPennies));
+                ? new NewPound(pound + pounds, newPennies - 100 * (int)pounds)
+                : new NewPound(pound, newPennies);
 
             return newPound;
         }
 
-        public int PenniesToPound(decimal pound, decimal shilling, decimal pennies)
+        private decimal PenniesToPound(decimal pound, decimal shilling, decimal pennies)
         {
             var newPennies = ShillingToPennies(pound, shilling, pennies);
 
             if (newPennies >= 100)
             {
-                return  (int) (newPennies / 100);
+                return (newPennies / 100);
             }
 
             return 0;
         }
 
-        public decimal ShillingToPennies(decimal pound, decimal shilling, decimal pennies)
+        private decimal ShillingToPennies(decimal pound, decimal shilling, decimal pennies)
         {
-            return  (shilling * MoneyConstants.ShillingToPennies + pennies) / (decimal) 2.4;
+            return  (shilling * MoneyConstants.ShillingToPennies + pennies) / 2.4M;
         }
     }
 }

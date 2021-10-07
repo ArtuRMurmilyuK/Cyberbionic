@@ -1,6 +1,6 @@
 ﻿namespace PoundConvectorApp.Models
 {
-    class NewPound
+    public class NewPound
     {
         public decimal Pound { get; }
         public decimal Pennies { get; }
