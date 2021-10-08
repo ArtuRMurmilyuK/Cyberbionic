@@ -8,10 +8,10 @@ namespace SumOfFractionsApp
         {
            double denominator = FindingTheDenominator(a, b);
 
-            var numerical = a.Numerator * (denominator / a.Denominator) +
+           var numerical = a.Numerator * (denominator / a.Denominator) +
                             b.Numerator * (denominator / b.Denominator);
-
-            return new Fraction(numerical, denominator);
+           
+           return new Fraction(numerical, denominator);
         }
 
         private double FindingTheDenominator(Fraction a , Fraction b )
