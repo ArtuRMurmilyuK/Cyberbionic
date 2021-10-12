@@ -21,7 +21,7 @@ namespace CalcTableApp
             Console.Write($"{(char)9556}");
 
             // ═
-            for (int i = 0; i <= 12; i++)
+            for (int i = 0; i <= _tabParams.Height; i++)
             {
                 Console.Write($"{(char)9552}");
             }
@@ -29,7 +29,7 @@ namespace CalcTableApp
             // ╗
             Console.WriteLine($"{(char)9559}");
 
-            for (int i = 0; i <= 12; i++)
+            for (int i = 0; i <= _tabParams.Width; i++)
             {
                 // ║
                 Console.Write($"{(char)9553}");
@@ -37,7 +37,7 @@ namespace CalcTableApp
                 //если нет контента то пустая строка
                 if (_content == null)
                 {
-                    for (int j = 0; j <= 12; j++)
+                    for (int j = 0; j <= _tabParams.Width; j++)
                     {
                         Console.Write(" ");
                     }
@@ -51,7 +51,7 @@ namespace CalcTableApp
             Console.Write($"{(char)9562}");
 
             // ═
-            for (int i = 0; i <= 12; i++)
+            for (int i = 0; i <= _tabParams.Height; i++)
             {
                 Console.Write($"{(char)9552}");
             }
