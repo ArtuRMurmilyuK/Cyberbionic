@@ -14,7 +14,7 @@ namespace CalcTableApp
                 var tabParams = manager.Analyzation(mulTab);
                 var tabBuilder = new TabBuilder(tabParams, mulTab);
                 tabBuilder.Build();
-
+            
                 Console.WriteLine();
                 Console.WriteLine("Exit: Q");
             } while (Console.ReadKey().Key == ConsoleKey.Q);
