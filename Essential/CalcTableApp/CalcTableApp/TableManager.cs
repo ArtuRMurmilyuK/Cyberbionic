@@ -4,8 +4,7 @@
     {
         public TabParams Analyzation(string[][] mulTab)
         {
-            //todo Width and Height
-            return new TabParams(){Width =12 };
+            return new TabParams(){Width = mulTab[0][0].Length, Height = mulTab.Length};
         }
     }
 }

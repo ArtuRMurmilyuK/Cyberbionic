@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace CalcTableApp
 {
@@ -15,53 +16,44 @@ namespace CalcTableApp
 
         public void Build()
         {
-            Console.Clear();
-
             var analiz = new TableManager();
             analiz.Analyzation(_content);
 
+            Console.Clear();
             // ╔
             Console.Write($"{(char)9556}");
-
-            // ═
-            for (int i = 0; i <= _tabParams.Width; i++)
+            // ═ (1 - ║ и ╔, ╗ )(два символа сверху и один слева)
+            for (int i = 0; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
             {
                 Console.Write($"{(char)9552}");
             }
-
             // ╗
             Console.WriteLine($"{(char)9559}");
 
-            // ║
-            //Console.Write($"{(char)9553}");
+            for (int j = 0; j < 10; j++)
+            {
+                // ║
+                Console.Write($"{(char)9553}");
 
-            //если нет контента то пустая строка
-            if (_content == null)
-            {
-                for (int j = 0; j <= _tabParams.Width; j++)
+                for (int i = 0; i < _tabParams.Height; i++)
                 {
-                    Console.Write(" ");
+                    Console.Write(_content[i][j]);
+
+                    if (i < _tabParams.Height - 1)
+                    {
+                        Console.Write($"{(char)9553}");
+                    }
                 }
+
+                Console.WriteLine($"{(char)9553}");
             }
-            else
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    // ║
-                    Console.Write($"{(char)9553}");
-                    Console.Write(_content[0][j]);
-                    Console.WriteLine($"{(char)9553}");
-                }
-            }
-                // ╚
+            // ╚
             Console.Write($"{(char)9562}");
-
-            // ═
-            for (int i = 0; i <= _tabParams.Width; i++)
+            // ═ (2 - ║ и ╔, ╗)
+            for (int i = 0; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
             {
                 Console.Write($"{(char)9552}");
             }
-
             // ╝
             Console.Write($"{(char)9565}");
         }

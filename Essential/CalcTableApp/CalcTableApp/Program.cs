@@ -10,14 +10,14 @@ namespace CalcTableApp
             var manager = new TableManager();
             do
             {
-                var mulTab = generator.Create(2, 9);
+                var mulTab = generator.Create(2, 7);
                 var tabParams = manager.Analyzation(mulTab);
                 var tabBuilder = new TabBuilder(tabParams, mulTab);
                 tabBuilder.Build();
             
                 Console.WriteLine();
                 Console.WriteLine("Exit: Q");
-            } while (Console.ReadKey().Key == ConsoleKey.Q);
+            } while (Console.ReadKey().Key != ConsoleKey.Q);
         }
     }
 

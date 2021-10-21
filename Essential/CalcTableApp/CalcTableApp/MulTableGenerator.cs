@@ -1,13 +1,10 @@
-﻿using System;
-
-namespace CalcTableApp
+﻿namespace CalcTableApp
 {
     internal class MulTableGenerator
     {
         public string[][] Create(int from, int till)
         {
-            
-            string[][] str = new string[till - from][];
+            string[][] str = new string[till - from + 1][];
 
             for (int i = 0; i < str.Length; i++, from++)
             {
