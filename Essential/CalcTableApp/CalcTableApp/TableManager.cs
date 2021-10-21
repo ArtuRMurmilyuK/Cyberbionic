@@ -4,7 +4,8 @@
     {
         public TabParams Analyzation(string[][] mulTab)
         {
-            return new TabParams();
+            //todo Width and Height
+            return new TabParams(){Width =12 };
         }
     }
 }

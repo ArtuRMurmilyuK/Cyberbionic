@@ -6,21 +6,27 @@ namespace CalcTableApp
     {
         public string[][] Create(int from, int till)
         {
+            
             string[][] str = new string[till - from][];
 
             for (int i = 0; i < str.Length; i++, from++)
             {
-                for (int j = 0, k = 1; j <= 10; j++, k++)
+                str[i] = new string[10];
+
+                for (int j = 0, k = 1; j < 10; j++, k++)
                 {
-                    if (from * k >= 10)
+                    if (from * k >= 10 && k < 10)
                     {
-                        str[i][j] = $" {from} * {j} = {from * j}";
+                        str[i][j] = $" {from} *  {k} = {from * k} ";
+                    }
+                    else if (from * k >= 10)
+                    {
+                        str[i][j] = $" {from} * {k} = {from * k} ";
                     }
                     else
                     {
-                        str[i][j] = $" {from} *  {j} =  {from * j}";
+                        str[i][j] = $" {from} *  {k} =  {from * k} ";
                     }
-                   
                 }
             }
             return str;
