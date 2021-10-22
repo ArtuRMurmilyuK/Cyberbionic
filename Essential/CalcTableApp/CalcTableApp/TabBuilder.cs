@@ -23,9 +23,18 @@ namespace CalcTableApp
             // ╔
             Console.Write($"{(char)9556}");
             // ═ (1 - ║ и ╔, ╗ )(два символа сверху и один слева)
-            for (int i = 0; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
+            for (int i = 0, k = 1 ; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
             {
-                Console.Write($"{(char)9552}");
+                if (i == _tabParams.Width * k + (k-1))
+                {
+                    Console.Write($"{(char)9572}");
+                    k += 1;
+                }
+                else
+                {
+                    Console.Write($"{(char)9552}");
+                }
+                
             }
             // ╗
             Console.WriteLine($"{(char)9559}");
@@ -41,7 +50,7 @@ namespace CalcTableApp
 
                     if (i < _tabParams.Height - 1)
                     {
-                        Console.Write($"{(char)9553}");
+                        Console.Write($"{(char)9474}");
                     }
                 }
 
@@ -50,9 +59,18 @@ namespace CalcTableApp
             // ╚
             Console.Write($"{(char)9562}");
             // ═ (2 - ║ и ╔, ╗)
-            for (int i = 0; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
+            for (int i = 0, k = 1; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
             {
-                Console.Write($"{(char)9552}");
+                if (i == _tabParams.Width * k + (k - 1))
+                {
+                    Console.Write($"{(char)9575}");
+                    k += 1;
+                }
+                else
+                {
+                    Console.Write($"{(char)9552}");
+                }
+
             }
             // ╝
             Console.Write($"{(char)9565}");
