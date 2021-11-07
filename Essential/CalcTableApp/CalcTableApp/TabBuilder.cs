@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 
 namespace CalcTableApp
 {
@@ -23,9 +22,9 @@ namespace CalcTableApp
             // ╔
             Console.Write($"{(char)9556}");
             // ═ (1 - ║ и ╔, ╗ )(два символа сверху и один слева)
-            for (int i = 0, k = 1 ; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
+            for (int i = 0, k = 1 ; i <= (_tabParams.Width + 1) * _tabParams.Height/2 - 2; i++)
             {
-                if (i == _tabParams.Width * k + (k-1))
+                if (i == _tabParams.Width * k + (k-1) )
                 {
                     Console.Write($"{(char)9572}");
                     k += 1;
@@ -44,11 +43,11 @@ namespace CalcTableApp
                 // ║
                 Console.Write($"{(char)9553}");
 
-                for (int i = 0; i < _tabParams.Height; i++)
+                for (int i = 0; i < _tabParams.Height/2; i++)
                 {
                     Console.Write(_content[i][j]);
 
-                    if (i < _tabParams.Height - 1)
+                    if (i < _tabParams.Height/2 - 1)
                     {
                         Console.Write($"{(char)9474}");
                     }
@@ -57,9 +56,45 @@ namespace CalcTableApp
                 Console.WriteLine($"{(char)9553}");
             }
             // ╚
-            Console.Write($"{(char)9562}");
+            Console.Write($"{(char)9568}");
             // ═ (2 - ║ и ╔, ╗)
-            for (int i = 0, k = 1; i <= (_tabParams.Width + 1) * _tabParams.Height - 2; i++)
+            for (int i = 0, k = 1; i <= (_tabParams.Width + 1) * _tabParams.Height/2 - 2; i++)
+            {
+                if (i == _tabParams.Width * k + (k - 1))
+                {
+                    Console.Write($"{(char)9578}");
+                    k += 1;
+                }
+                else
+                {
+                    Console.Write($"{(char)9552}");
+                }
+
+            }
+            
+            Console.WriteLine($"{(char)9571}");
+            
+            for (int j = 0; j < 10; j++)
+            {
+                // ║
+                Console.Write($"{(char)9553}");
+
+                for (int i = _tabParams.Height /2;  i < _tabParams.Height  ; i++)
+                {
+                    Console.Write(_content[i][j]);
+
+                    if (i < _tabParams.Height  - 1)
+                    {
+                        Console.Write($"{(char)9474}");
+                    }
+                }
+
+                Console.WriteLine($"{(char)9553}");
+            }
+
+            Console.Write($"{(char)9562}");
+
+            for (int i = 0, k = 1; i <= (_tabParams.Width + 1) * _tabParams.Height / 2 - 2; i++)
             {
                 if (i == _tabParams.Width * k + (k - 1))
                 {

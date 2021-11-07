@@ -10,7 +10,7 @@ namespace CalcTableApp
             var manager = new TableManager();
             do
             {
-                var mulTab = generator.Create(1, 10);
+                var mulTab = generator.Create(2, 9);
                 var tabParams = manager.Analyzation(mulTab);
                 var tabBuilder = new TabBuilder(tabParams, mulTab);
                 tabBuilder.Build();
