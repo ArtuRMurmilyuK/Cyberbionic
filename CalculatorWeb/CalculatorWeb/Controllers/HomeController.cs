@@ -33,10 +33,32 @@ namespace CalculatorWeb.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public string Sum(int a, int b)
+        
+        [HttpPost]
+        public string SumAandB(int numA, int numB, string math)
         {
-            double result = a + b;
-            return $"Sum a={a} & b={b} == {result}";
+            double result = 0;
+            string operation;
+            switch (math)
+            {
+                case "*":
+                    result = numA * numB;
+                    operation = "Mul";
+                    break;
+                case "/":
+                    result = numA / numB;
+                    operation = "Div";
+                    break;
+                case "+":
+                    result = numA + numB;
+                    operation = "Sum";
+                    break;
+                case "-":
+                    result = numA - numB;
+                    operation = "subs";
+                    break;
+            }
+            return $"Sum={result}";
         }
     }
 }
